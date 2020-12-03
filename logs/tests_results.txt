@@ -1,0 +1,44 @@
+test_crit (__main__.TestCharacter) ... ERROR
+test_init (__main__.TestCharacter) ... ERROR
+test_name (__main__.TestCharacter) ... ERROR
+test_weapon (__main__.TestCharacter) ... ERROR
+test_init (__main__.TestWeapon) ... ok
+test_name (__main__.TestWeapon) ... ok
+test_unarmed (__main__.TestWeapon) ... ok
+
+======================================================================
+ERROR: test_crit (__main__.TestCharacter)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:/Users/olivi/OneDrive/Bureau/Exercices INF1007/c02-revision-2-OlivierBigonnesse/test_exercice.py", line 38, in setUp
+    self.hp_only =  Character("hp_only",  69,  1,  1,  1)
+TypeError: Can't instantiate abstract class Character with abstract methods compute_damage
+
+======================================================================
+ERROR: test_init (__main__.TestCharacter)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:/Users/olivi/OneDrive/Bureau/Exercices INF1007/c02-revision-2-OlivierBigonnesse/test_exercice.py", line 38, in setUp
+    self.hp_only =  Character("hp_only",  69,  1,  1,  1)
+TypeError: Can't instantiate abstract class Character with abstract methods compute_damage
+
+======================================================================
+ERROR: test_name (__main__.TestCharacter)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:/Users/olivi/OneDrive/Bureau/Exercices INF1007/c02-revision-2-OlivierBigonnesse/test_exercice.py", line 38, in setUp
+    self.hp_only =  Character("hp_only",  69,  1,  1,  1)
+TypeError: Can't instantiate abstract class Character with abstract methods compute_damage
+
+======================================================================
+ERROR: test_weapon (__main__.TestCharacter)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:/Users/olivi/OneDrive/Bureau/Exercices INF1007/c02-revision-2-OlivierBigonnesse/test_exercice.py", line 38, in setUp
+    self.hp_only =  Character("hp_only",  69,  1,  1,  1)
+TypeError: Can't instantiate abstract class Character with abstract methods compute_damage
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+FAILED (errors=4)

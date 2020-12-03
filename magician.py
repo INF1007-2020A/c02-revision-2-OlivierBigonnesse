@@ -19,8 +19,8 @@ class Magician(WeaponUser, Spellcaster):
 		super().__init__(**kwargs)
 		self.using_magic = False
 		self.known_commands.update({
-			"magic": self.use_magic,
-			"physical": self.use_weapon
+			"magic": self.do_magic,
+			"physical": self.do_physical
 		})
 
 	# TODO: Surcharger la méthode `compute_damage`
@@ -37,8 +37,10 @@ class Magician(WeaponUser, Spellcaster):
 	def will_use_spell(self):
 		return self.using_magic and self.can_use_spell()
 
-	def use_magic(self, param):
+	def do_magic(self, defender):
 		self.using_magic = True
+		self.do_attack(defender)
 
-	def use_weapon(self, param):
+	def do_physical(self, defender):
 		self.using_magic = False
+		self.do_attack(defender)

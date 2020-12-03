@@ -43,7 +43,10 @@ class Character(ABC):
 		self.attack = attack
 		self.defense = defense
 		self.hp = max_hp
-		self.__known_commands = {}
+		self.__known_commands = {
+			"attack": self.do_attack,
+			"pass": self.do_pass
+		}
 	
 	@property
 	def name(self):
@@ -75,4 +78,18 @@ class Character(ABC):
 
 	def take_damage(self, dmg):
 		self.hp -= dmg
+
+	def do_attack(self, defender):
+		damage, crit = self.compute_damage(defender)
+		weapon_used = self.last_move_used.name if self.last_move_used is not None else "nothing"
+		old_hp = defender.hp
+		defender.take_damage(damage)
+		new_hp = defender.hp
+		print(f"{self.name} used {weapon_used}")
+		if crit:
+			print("Critical hit!")
+		print(f"{defender.name} took {old_hp - new_hp} dmg")
+
+	def do_pass(self, defender):
+		print("Nothing happened")
 
